@@ -3,31 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const baseDeDatos = [
         {
             id: 1,
-            nombre: 'Caramelo',
-            descripcion: 'Descripción del producto',
+            nombre: 'Flynn Paff',
+            descripcion: 'Caramelo masticabl, sabor tutti frutti. Formato de venta: Unidad',
             precio: 5,
-            imagen: 'imagen'
+            imagen: 'caramelo.webp'
         },
         {
             id: 2,
-            nombre: 'Chicle',
-            descripcion: 'Descripción del producto',
+            nombre: 'Top Line',
+            descripcion: 'Chicle sin azucar, sabor frutilla. Formato de venta: Unidad',
             precio: 4,
-            imagen: 'imagen'
+            imagen: 'chicle.webp'
         },
         {
             id: 3,
-            nombre: 'Chupetin',
-            descripcion: 'Descripción del producto',
+            nombre: 'Crazy pop',
+            descripcion: 'Chupetin sabor frutilla, Formato de venta: Unidad',
             precio: 1,
-            imagen: 'imagen'
+            imagen: 'chupetin.webp'
         },
         {
             id: 4,
-            nombre: 'Alfajor',
-            descripcion: 'Descripción del producto',
+            nombre: 'Tofi negro',
+            descripcion: 'Alfajor negro con dulce de leche, Formato de venta: Unidad',
             precio: 3,
-            imagen: 'imagen'
+            imagen: 'alfajor.webp'
         }
 
     ];
@@ -66,10 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const miNodoPrecio = document.createElement('p');
                 miNodoPrecio.classList.add('card-text');
                 miNodoPrecio.textContent = `${info.precio}${divisa}`;
+
+                //descripcion
+                const miNodoDescripcion= document.createElement ('p')
+                miNodoDescripcion.textContent= info.descripcion;
+                
                 // Boton 
                 const miNodoBoton = document.createElement('button');
                 miNodoBoton.classList.add('btn', 'btn-primary');
-                miNodoBoton.textContent = '+';
+                miNodoBoton.textContent = 'Comprar';
                 miNodoBoton.setAttribute('marcador', info.id);
                 miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
                
@@ -78,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 miNodoCardBody.appendChild(miNodoTitle);
                 miNodoCardBody.appendChild(miNodoPrecio);
                 miNodoCardBody.appendChild(miNodoBoton);
+                miNodoCardBody.appendChild (miNodoDescripcion)
                 miNodo.appendChild(miNodoCardBody);
                 DOMitems.appendChild(miNodo);
             });
