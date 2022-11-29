@@ -83,6 +83,15 @@
             });
         }
 
-        
+        /**
+          * Evento para añadir un producto al carrito de la compra
+          */
+         function anyadirProductoAlCarrito(evento) {
+            // Anyadimos el Nodo a nuestro carrito
+            carrito.push(evento.target.getAttribute('marcador'))
+            // Actualizamos el carrito 
+            renderizarCarrito();
+
+        }
 
 
