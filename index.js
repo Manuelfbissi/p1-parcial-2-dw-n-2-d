@@ -11,24 +11,42 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 2,
             nombre: 'Top Line',
-            descripcion: 'Chicle sin azucar, sabor frutilla. Formato de venta: Unidad',
+            descripcion: 'Chicle sin azucar, sabor frutilla. Formato de venta: Pack.',
             precio: 4,
             imagen: 'chicle.webp'
         },
         {
             id: 3,
             nombre: 'Crazy pop',
-            descripcion: 'Chupetin sabor frutilla, Formato de venta: Unidad',
+            descripcion: 'Chupetin sabor frutilla, Formato de venta: Unidad.',
             precio: 1,
             imagen: 'chupetin.webp'
         },
+        
         {
             id: 4,
-            nombre: 'Tofi negro',
-            descripcion: 'Alfajor negro con dulce de leche, Formato de venta: Unidad',
+            nombre: 'Lays',
+            descripcion: 'Papas Fritas Lays, sabor clasico, formato de venta: Pack.',
             precio: 3,
-            imagen: 'alfajor.webp'
+            imagen: 'papas.webp'
+        },
+
+        {
+            id: 5,
+            nombre: 'Saladix',
+            descripcion: 'Snack Saladix sabor jamon, Formato de venta: unidad.',
+            precio: 10,
+            imagen: 'saladix.webp'
+        },
+
+        {
+            id: 6,
+            nombre: 'Chocolate',
+            descripcion: 'Chocolate cofler con almendras, formato de venta: Unidad.',
+            precio: 15,
+            imagen: 'chocolate.webp'
         }
+       
 
     ];
 
@@ -38,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const DOMcarrito = document.querySelector('#carrito');
           const DOMtotal = document.querySelector('#total');
           const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+          const DOMbotoncomprar = document.querySelector('#boton-comprar');
 
 
 
@@ -66,17 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const miNodoPrecio = document.createElement('p');
                 miNodoPrecio.classList.add('card-text');
                 miNodoPrecio.textContent = `${info.precio}${divisa}`;
-
-                //descripcion
+                 //descripcion
                 const miNodoDescripcion= document.createElement ('p')
                 miNodoDescripcion.textContent= info.descripcion;
                 
                 // Boton 
                 const miNodoBoton = document.createElement('button');
                 miNodoBoton.classList.add('btn', 'btn-primary');
-                miNodoBoton.textContent = 'Comprar';
+                miNodoBoton.textContent = 'Agregar';
                 miNodoBoton.setAttribute('marcador', info.id);
                 miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                
                
                 // Insertamos
                 miNodoCardBody.appendChild(miNodoImagen);
@@ -176,8 +195,15 @@ document.addEventListener('DOMContentLoaded', () => {
             renderizarCarrito();
         }
 
+        function compraExitosa(){
+            alert ("¡Su compra fue exitosa!")
+        }
+
         // Eventos
         DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+
+        DOMbotoncomprar.addEventListener('click', compraExitosa);
+
 
         // Inicio
         renderizarProductos();
