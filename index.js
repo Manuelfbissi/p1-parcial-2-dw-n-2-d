@@ -6,14 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: 'Flynn Paff',
             descripcion: 'Caramelo masticabl, sabor tutti frutti. Formato de venta: Unidad',
             precio: 5,
-            imagen: 'caramelo.webp'
+            imagen: 'caramelo.webp',
+          
         },
         {
             id: 2,
             nombre: 'Top Line',
             descripcion: 'Chicle sin azucar, sabor frutilla. Formato de venta: Pack.',
             precio: 4,
-            imagen: 'chicle.webp'
+            imagen: 'chicle.webp',
+            seccion: "dulce"
         },
         {
             id: 3,
@@ -197,12 +199,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function compraExitosa(){
             alert ("¡Su compra fue exitosa!")
+            vaciarCarrito();
         }
+        
+     
+
+  
 
         // Eventos
         DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 
-        DOMbotoncomprar.addEventListener('click', compraExitosa);
+        DOMbotoncomprar.addEventListener('click', compraExitosa );
+
+
 
 
         // Inicio
